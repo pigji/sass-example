@@ -22,3 +22,21 @@ window.addEventListener("load", () => {
     }
   })
 })
+
+//브라우저의 크기를 변경했을때 이벤트 추가
+window.addEventListener("resize", () => {
+  //gnb요소 선택
+  const gnb = document.querySelector(".gnb");
+  //브라우저창의 가로 크기(넓이)를 winWidth에 할당(저장)
+  const winWidth = window.innerWidth;
+  console.log(winWidth) //넓이 값 확인
+
+  //브라우저 창의 크기가 768px 이상일때 gnb의 maxHeight 값을 안보이는 컨텐츠의 크기만큼 늘려주고,
+    //브라우저 창의 크기가 678px 미만일때 gnb의 maxHeight 값을 다시 0으로 변경
+  if(winWidth >= 768){
+    gnb.style.maxHeight = gnb.scrollHeight + "px";
+  }
+  else{
+     gnb.style.maxHeight = "0px";
+  }
+})

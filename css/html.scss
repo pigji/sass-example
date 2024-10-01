@@ -20,21 +20,22 @@ html *{ //html 요소와 html의 하위요소 모두 선택
 }
 
 // '&' = 상위 선택자
-body{
+body {
   line-height: 1.4;
-  h1{
-    font-size: 40px;
-  }
 }
-button{
-  background-color: gold;
-  &:hover{
-    background-color: tomato;
-  }
+body h1 {
+  font-size: 40px;
 }
 
-//믹스인 정의
-@mixin my-font{
+/* & = 상위 선택자*/
+button {
+  background-color: gold;
+}
+button:hover {
+  background-color: tomato;
+}
+
+h1 {
   font-family: sans-serif;
   font-size: 32px;
   font-style: normal;
@@ -42,19 +43,9 @@ button{
   color: orange;
 }
 
-//믹스인 사용
-h1{
-  @include my-font()
-}
-
-//믹스인 인자(파라미터)
-@mixin your-font($font-color, $bg-color){
+p {
   font-size: 18px;
   font-weight: 900;
-  color: $font-color;
-  background-color: $bg-color;
-}
-
-p{
-  @include your-font(blue, yellow);
-}
+  color: blue;
+  background-color: yellow;
+}/*# sourceMappingURL=html.css.map */
